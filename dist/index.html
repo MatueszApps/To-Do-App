@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List App</title>
+    <link rel="stylesheet" href="styles.css">
 <script defer src="bundle.js"></script></head>
 <body>
     <div class="container">
@@ -13,14 +14,65 @@
         <div class="main_content">
             <div id="side_menu">
                 <ul>
-                    <li>All projects</li>
-                    <li>Add new project</li>
+                    <li id="all-projects-link">All projects</li>
+                    <li id="add-new-project-link">Add new project</li>
                 </ul>
             </div>
             <div id="canvas">
-
+                <!-- Kontener dla dynamicznej zawartości -->
             </div>
         </div>
     </div>
+    <div class="overlay" id="overlay">
+        <div class="form-container">
+            <h3>Add New Project</h3>
+            <form id="project-form">
+                <div>
+                    <label for="project-name">Project Name:</label>
+                    <input type="text" id="project-name" required>
+                </div>
+                <div>
+                    <label for="project-description">Description:</label>
+                    <textarea id="project-description" required></textarea>
+                </div>
+                <div>
+                    <label for="project-dueDate">Due Date:</label>
+                    <input type="date" id="project-dueDate" required>
+                </div>
+                <button type="submit">Save Project</button>
+                <button type="button" id="cancel-button">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="overlay" id="task-overlay">
+        <div class="form-container">
+            <h3>Add New Task</h3>
+            <form id="task-form">
+                <div>
+                    <label for="task-name">Task Name:</label>
+                    <input type="text" id="task-name" required>
+                </div>
+                <div>
+                    <label for="task-description">Description:</label>
+                    <textarea id="task-description" required></textarea>
+                </div>
+                <div>
+                    <label for="task-dueDate">Due Date:</label>
+                    <input type="date" id="task-dueDate" required>
+                </div>
+                <div>
+                    <label for="task-priority">Priority:</label>
+                    <select id="task-priority" required>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <button type="submit">Save Task</button>
+                <button type="button" id="task-cancel-button">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="src/index.js"></script>
 </body>
 </html>

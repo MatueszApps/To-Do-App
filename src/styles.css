@@ -1,0 +1,191 @@
+/* Ogólne style */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* Kontener */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Dodane aby usunac szary pasek */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    background-color: #4CAF50;
+    color: white;
+    margin: 0; /* Dodane aby usunac margines */
+    padding: 0; /* Dodane aby usunac padding */
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+/* Main content */
+.main_content {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    margin: 0; /* Dodane aby usunac margines */
+    padding: 0; /* Dodane aby usunac padding */
+}
+
+/* Side menu */
+#side_menu {
+    width: 30%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+#side_menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#side_menu ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #444;
+    cursor: pointer;
+}
+
+#side_menu ul li:hover {
+    background-color: #555;
+}
+
+/* Canvas */
+#canvas {
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    margin: 0; /* Dodane aby usunac margines */
+}
+
+/* Dodanie stylu dla <h2> wewnątrz #canvas */
+#canvas h2 {
+    padding: 20px;
+    margin: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 5px; /* Opcjonalnie: dodaj zaokrąglone rogi */
+}
+
+/* Task and project styles */
+.task, .project {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.task button, .project button {
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.task button:hover, .project button:hover {
+    background-color: darkred;
+}
+
+/* Dodanie stylu dla przycisku "Add New Task" */
+button.add-task-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button.add-task-button:hover {
+    background-color: #45a049;
+}
+
+/* Dodanie kursora dla nazwy projektu */
+.project h3 {
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+}
+
+.form-container div {
+    margin-bottom: 15px;
+}
+
+/* Form inputs */
+.form-container input, .form-container textarea, .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Upewnij się, że padding jest uwzględniany wewnątrz szerokości i wysokości */
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.form-container button#cancel-button, .form-container button#task-cancel-button {
+    background-color: #f44336;
+}
+
+.form-container button#cancel-button:hover, .form-container button#task-cancel-button:hover {
+    background-color: #e53935;
+}
+
+.add-task-button{
+    margin: 20px;
+    padding: 20px;
+}
