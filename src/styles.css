@@ -77,11 +77,11 @@ body, html {
 
 /* Dodanie stylu dla <h2> wewnątrz #canvas */
 #canvas h2 {
-    padding: 20px;
-    margin: 20px;
-    background-color: black;
+    background-color: #333;
     color: white;
     border-radius: 5px; /* Opcjonalnie: dodaj zaokrąglone rogi */
+    padding: 20px 0;
+    padding-left: 10px;
 }
 
 /* Task and project styles */
@@ -186,6 +186,6 @@ button.add-task-button:hover {
 }
 
 .add-task-button{
-    margin: 20px;
-    padding: 20px;
+    padding: 20px 0;
+    padding-left: 10px;
 }
