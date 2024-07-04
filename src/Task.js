@@ -1,3 +1,6 @@
+import Project from './Project.js';
+
+
 class Task {
     constructor(name, description, dueDate, priority) {
       this.name = name;
@@ -9,6 +12,7 @@ class Task {
     getTaskInfo() {
       return `Task: ${this.name}\nDescription: ${this.description}\nDue Date: ${this.dueDate}\nPriority: ${this.priority}`;
     }
+
   }
   
   export default Task;

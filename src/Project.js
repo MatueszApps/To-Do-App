@@ -16,6 +16,9 @@ class Project {
   addTask(name, description, dueDate, priority) {
     const newTask = new Task(name, description, dueDate, priority);
     this.tasks.push(newTask);
+      if (this.dueDate > Project.dueDate)
+        alert("Please put correct date");
+    
     console.log("Task added:", newTask); // Debug: wyświetlanie dodanego zadania
   }
 
@@ -27,6 +30,9 @@ class Project {
     const tasksInfo = this.tasks.map(task => task.getTaskInfo()).join('\n\n');
     return `Project: ${this.name}\nDescription: ${this.description}\nDue Date: ${this.dueDate}\nTasks:\n${tasksInfo}`;
   }
+
+ 
+
 }
 
 export default Project;

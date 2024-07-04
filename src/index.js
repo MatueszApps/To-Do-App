@@ -34,6 +34,17 @@ function hideTaskOverlay() {
     taskOverlay.style.display = 'none';
 }
 
+function showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    document.body.appendChild(errorDiv);
+
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 3000);
+}
+
 function displayAllProjects() {
     canvas.innerHTML = ''; // Czyszczenie canvas
     manager.getProjects().forEach((project, index) => {
@@ -117,6 +128,15 @@ taskForm.addEventListener('submit', (e) => {
         const description = document.getElementById('task-description').value;
         const dueDate = document.getElementById('task-dueDate').value;
         const priority = document.getElementById('task-priority').value;
+        
+        // Sprawdzanie terminu zadania
+        const projectDueDate = new Date(currentProject.dueDate);
+        const taskDueDate = new Date(dueDate);
+        if (taskDueDate > projectDueDate) {
+            showError('Task due date cannot be later than project due date.');
+            return;
+        }
+
         console.log("Task Details:", { name, description, dueDate, priority }); // Debug: wyświetlanie szczegółów zadania
         currentProject.addTask(name, description, dueDate, priority);
         console.log("Tasks after adding:", currentProject.tasks); // Debug: wyświetlanie zadań po dodaniu
